@@ -1,0 +1,106 @@
+<html>
+  <head>
+  <title>Meow Dialer</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="phone.css">
+  </head>
+
+  <body>
+  <div class="tab_bar" id="my_tab_bar">
+    <button class="tabButton" id="dialer">Dialer</button>
+    <button class="tabButton" id="contact-list">Contact List</button>
+    <button class="tabButton" id="add-contact">Add Contact</button>
+    <button class="tabButton" id="gestures">Gestures</button>
+  </div>
+  <div class="content" id="content">
+    <div class="header" id="header">
+      <p>Use left (<--) or right (-->) arrows to navigate.</p>
+      <p>Or use the gesture box below to swipe left or right.</p>
+      <div class="gesture-box-2" id="gesture-box-2"></div>
+    </div>
+
+    <div id="dialer-content">
+      <form class="pure-form pure-form-stacked">
+        <label for="dial-number">Phone number</label>
+        <input id="dial-number" placeholder="">
+      </form>
+      <table class="keypad" id="keypad" >
+	<tbody>
+		<tr>
+			<td><button class="phoneButton" id="1" onclick="javascript:PlaySound('sounds/cat1.wav');">1</button></td>
+			<td><button class="phoneButton" id="2" onclick="javascript:PlaySound('sounds/cat2.wav');">2</button></td>
+			<td><button class="phoneButton" id="3" onclick="javascript:PlaySound('sounds/cat3.wav');">3</button></td>
+		</tr>
+		<tr>
+			<td><button class="phoneButton" id="4" onclick="javascript:PlaySound('sounds/cat4.mp3');">4</button></td>
+			<td><button class="phoneButton" id="5" onclick="javascript:PlaySound('sounds/cat5.wav');">5</button></td>
+			<td><button class="phoneButton" id="6" onclick="javascript:PlaySound('sounds/cat6.wav');">6</button></td>
+		</tr>
+		<tr>
+			<td><button class="phoneButton" id="7" onclick="javascript:PlaySound('sounds/cat7.wav');">7</button></td>
+			<td><button class="phoneButton" id="8" onclick="javascript:PlaySound('sounds/cat8.wav');">8</button></td>
+			<td><button class="phoneButton" id="9" onclick="javascript:PlaySound('sounds/cat9.wav');">9</button></td>
+		</tr>
+		<tr>
+			<td><button class="phoneButton" id="star" onclick="javascript:PlaySound('sounds/cat11.wav');">*</button></td>
+			<td><button class="phoneButton" id="0" onclick="javascript:PlaySound('sounds/cat10.mp3');">0</button></td>
+			<td><button class="phoneButton" id="pound" onclick="javascript:PlaySound('sounds/cat13.wav');">#</button></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<table>
+  <tbody>
+<tr>
+  <td><button class="phoneButton" id="dial">Dial</button></td>
+  <td><button class="phoneButton" id="clear">Clear</button></td>
+</tbody>
+</table>
+<script type="text/javascript">
+
+function PlaySound(path) {
+  var audioElement = document.createElement('audio');
+  audioElement.setAttribute('src', path);
+  audioElement.play();
+}
+
+</script>
+
+<p class="note-text" id="dialer-note">(Hit the keys with your sound turned on for a surprise.)</p>
+
+    </div>
+
+    <div class="content" id="contact-list-content">
+      <button class="contact">Chesire Cat</button>
+      <button class="contact">Grumpy Cat</button>
+      <button class="contact">Hello Kitty</button>
+      <button class="contact">Maru Cat</button>
+      <button class="contact">Stimpson J. Cat</button>
+      <button class="contact">Tigger</button>
+    </div>
+
+    <div class="content" id="add-contact-content">
+      Add a new contact to your address book
+      <form class="pure-form pure-form-stacked">
+        <label for="name">Name</label>
+        <input id="name" placeholder="Colonel Meow">
+      </form>
+      <form class="pure-form pure-form-stacked">
+        <label for="number">Phone number</label>
+        <input id="number" placeholder="303-303-3030">
+      </form>
+    </div>
+  </div>
+
+<div class="content" id="gestures-content">
+  <label for="gestures-output">Current gesture</label>
+  <input id="gestures-output" placeholder="">
+  <div class="gesture-box" id="gesture-box-1"></div>
+</div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="phone.js"></script>
+  </body>
+  </html>
